@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+
+  server:
+    image: rest-server
+    build: ./server
+    ports:
+        - "5000:5000"
+  #   volumes:
+  #       - .:/server
+
+  camera:
+    image: camera
+    build: ./camera
+    links: 
+        - server
+    # volumes:
+    #     - .:/camera
