@@ -35,7 +35,7 @@ def get_logs():
 def retrieve_logs_from_camera():
     print(request.json)
     if not request.json:
-        abort(400) 
+        abort(404) 
     events = request.json.get('events')
     camera_response_queue.put(events)  
     print("retrieving event log from camera")
